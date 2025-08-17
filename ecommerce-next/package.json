@@ -8,6 +8,7 @@
     "start": "next start",
     "test": "jest",
     "lint": "next lint"
+  
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
