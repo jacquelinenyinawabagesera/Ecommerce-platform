@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 
-export function NewArrival() {
+export default function NewArrival() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="flex items-center gap-4 mb-6">

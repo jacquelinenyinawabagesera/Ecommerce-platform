@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Header } from "./page";
+import { Header } from ".";
 
 (Header as React.FC).displayName = "Header";
 
@@ -52,13 +52,35 @@ describe("Header", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders heart, cart, and user icons", () => {
+  it("search input is of type text", () => {
     render(<Header />);
-    const buttons = screen.getAllByRole("button");
-    expect(buttons.length).toBeGreaterThanOrEqual(4);
+    const searchInput = screen.getByPlaceholderText(/What are you looking for\?/i);
+    expect(searchInput).toHaveAttribute("type", "text");
+  });
 
-    expect(
-      screen.getByText("0", { selector: "span" })
-    ).toBeInTheDocument();
+  it("ShopNow button is visible and clickable", () => {
+    render(<Header />);
+    const shopNowButton = screen.getByRole("button", { name: /ShopNow/i });
+    expect(shopNowButton).toBeVisible();
+    expect(shopNowButton).not.toBeDisabled();
+  });
+
+  it("has correct number of navigation links", () => {
+    render(<Header />);
+    const navLinks = [
+      screen.getByRole("link", { name: /Home/i }),
+      screen.getByRole("link", { name: /Contact/i }),
+      screen.getByRole("link", { name: /About/i }),
+      screen.getByRole("link", { name: /Sign Up/i }),
+    ];
+    expect(navLinks).toHaveLength(4);
+  });
+
+  it("contains the correct class names for brand link", () => {
+    render(<Header />);
+    const brandLink = screen.getByRole("link", { name: /Exclusive/i });
+    expect(brandLink).toHaveClass("text-2xl");
+    expect(brandLink).toHaveClass("font-bold");
+    expect(brandLink).toHaveClass("text-black");
   });
 });

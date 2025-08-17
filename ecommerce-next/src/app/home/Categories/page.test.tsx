@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Categories } from "./page";
+import Categories from "./page";
 
 describe("Categories Component", () => {
   it("renders section and heading", () => {

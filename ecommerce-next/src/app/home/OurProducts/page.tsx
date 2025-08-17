@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Heart, Eye, Star } from "lucide-react";
 
-export function OurProducts() {
+export default function OurProducts() {
   const products = [
     {
       id: 1,
@@ -86,6 +86,7 @@ export function OurProducts() {
       colors: ["#184A48", "#FB1314"]
     }
   ];
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="flex items-center gap-4 mb-6">
@@ -100,9 +101,7 @@ export function OurProducts() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         {products.map((product) => (
           <div key={product.id} className="group cursor-pointer">
-
             <div className="relative bg-gray-200 rounded-sm p-8 mb-4 h-64 flex items-center justify-center">
-
               {product.isNew && (
                 <div className="absolute top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-sm text-sm">
                   NEW
@@ -118,7 +117,7 @@ export function OurProducts() {
                 </button>
               </div>
 
-              <div className="w-39 h-60  rounded-lg flex items-center justify-center overflow-hidden">
+              <div className="w-39 h-60 rounded-lg flex items-center justify-center overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Button, buttonVariants } from "./page";
+import { Button, buttonVariants } from ".";
 
 describe("Button", () => {
   it("renders with default props", () => {

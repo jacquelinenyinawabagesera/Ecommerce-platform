@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Footer } from "./page";
+import { Footer } from ".";
 
 (Footer as React.FC).displayName = "Footer";
 

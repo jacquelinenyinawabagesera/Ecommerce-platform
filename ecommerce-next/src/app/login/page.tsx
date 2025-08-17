@@ -2,10 +2,10 @@
 import * as React from "react";
 import { useState, ChangeEvent, FormEvent } from "react";
 import Link from "next/link";
-import { Button } from "../shared-components/Button/page";
-import { Input } from "../shared-components/Input/page";
-import { Footer } from "../shared-components/Footer/page";
-import Header from "../shared-components/SignUpHeader/page";
+import { Button } from "../shared-components/Button";
+import { Input } from "../shared-components/Input";
+import { Footer } from "../shared-components/Footer";
+import Header from "../shared-components/SignUpHeader";
 import Image from "next/image";
 
 export default function SignIn() {

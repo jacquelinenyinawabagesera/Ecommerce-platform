@@ -3,11 +3,18 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import SignIn from "./page";
 
-jest.mock("next/link", () => {
-  return ({ children, ...props }: React.PropsWithChildren<any>) => <a {...props}>{children}</a>;
-});
+// Always use ES module style for every mock!
+jest.mock("next/link", () => ({
+  __esModule: true,
+  default: ({ children, ...props }: React.PropsWithChildren<React.AnchorHTMLAttributes<HTMLAnchorElement>>) => (
+    <a {...props}>{children}</a>
+  ),
+}));
 
-jest.mock("next/image", () => (props: any) => <img {...props} alt={props.alt} />);
+jest.mock("next/image", () => ({
+  __esModule: true,
+  default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => <img {...props} alt={props.alt || ""} />,
+}));
 
 jest.mock("../shared-components/SignUpHeader/page", () => ({
   __esModule: true,

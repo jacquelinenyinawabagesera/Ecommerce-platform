@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { BestSelling } from "./page";
+import BestSelling from "./page";
 
 describe("BestSelling Component", () => {
   it("renders section and heading", () => {
