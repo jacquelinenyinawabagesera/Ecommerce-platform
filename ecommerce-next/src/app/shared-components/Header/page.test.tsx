@@ -3,8 +3,14 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Header } from "./page";
 
+(Header as React.FC).displayName = "Header";
+
 jest.mock("next/link", () => {
-  return ({ children, ...props }: React.PropsWithChildren<any>) => <a {...props}>{children}</a>;
+  const MockLink: React.FC<React.PropsWithChildren<React.AnchorHTMLAttributes<HTMLAnchorElement>>> = ({ children, ...props }) => (
+    <a {...props}>{children}</a>
+  );
+  MockLink.displayName = "MockLink";
+  return MockLink;
 });
 
 describe("Header", () => {

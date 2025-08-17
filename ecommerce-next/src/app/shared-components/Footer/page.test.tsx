@@ -3,10 +3,12 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Footer } from "./page";
 
-// Footer.displayName = "Footer";
+(Footer as React.FC).displayName = "Footer";
 
-jest.mock("next/image", () => (props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLImageElement> & React.ImgHTMLAttributes<HTMLImageElement>) => {
-  return <img {...props} alt={props.alt || ""} />;
+jest.mock("next/image", () => {
+  const MockImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => <img {...props} alt={props.alt || ""} />;
+  MockImage.displayName = "MockImage";
+  return MockImage;
 });
 
 describe("Footer", () => {
