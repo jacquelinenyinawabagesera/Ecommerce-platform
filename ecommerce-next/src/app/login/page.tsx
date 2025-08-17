@@ -40,6 +40,7 @@ export default function SignIn() {
             width={900}
             height={500}
             className="max-w-full h-auto"
+            priority
           />
         </div>
 
