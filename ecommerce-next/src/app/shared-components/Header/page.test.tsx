@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import { Header } from "./page";
 
 jest.mock("next/link", () => {
-  return ({ children, ...props }: any) => <a {...props}>{children}</a>;
+  return ({ children, ...props }: React.PropsWithChildren<any>) => <a {...props}>{children}</a>;
 });
 
 describe("Header", () => {
