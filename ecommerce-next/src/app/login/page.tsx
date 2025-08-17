@@ -2,6 +2,7 @@
 import * as React from "react";
 import { useState, ChangeEvent, FormEvent } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "../shared-components/Button";
 import { Input } from "../shared-components/Input";
 import { Footer } from "../shared-components/Footer";
@@ -9,8 +10,9 @@ import Header from "../shared-components/SignUpHeader";
 import Image from "next/image";
 
 export default function SignIn() {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -26,6 +28,7 @@ export default function SignIn() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    router.push("/");
   };
 
   return (
@@ -33,7 +36,7 @@ export default function SignIn() {
       <Header />
 
       <div className="flex flex-col md:flex-row items-center md:items-start gap-40 py-12">
-        <div className="flex">
+        <div className="flex mb-20">
           <Image
             src="/images/SideImage.png"
             alt="Cart and a smartphone"
@@ -51,9 +54,7 @@ export default function SignIn() {
                 <h1 className="text-4xl font-medium text-black mb-2">
                   Log in to Exclusive
                 </h1>
-                <p className="text-black text-base">
-                  Enter your details below
-                </p>
+                <p className="text-black text-base">Enter your details below</p>
               </div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-6">
@@ -64,7 +65,7 @@ export default function SignIn() {
                       placeholder="Email or Phone Number"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-red-500 placeholder:text-gray-400"
+                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-gray-500 placeholder:text-gray-400"
                     />
                   </div>
                   <div>
@@ -74,7 +75,7 @@ export default function SignIn() {
                       placeholder="Password"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-red-500 placeholder:text-gray-400"
+                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-gray-500 placeholder:text-gray-400"
                     />
                   </div>
                 </div>
@@ -94,8 +95,11 @@ export default function SignIn() {
                 </div>
               </form>
               <div className="text-center">
-                <span className="text-gray-600">Don&#39;t have an account? </span>
-                <Link href="/signup" className="text-black font-medium underline hover:no-underline">
+                <span className="text-gray-600">Don't have an account? </span>
+                <Link
+                  href="/signup"
+                  className="text-black font-medium underline hover:no-underline"
+                >
                   Create account
                 </Link>
               </div>

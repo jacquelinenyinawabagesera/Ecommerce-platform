@@ -3,7 +3,6 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import SignIn from "./page";
 
-// Always use ES module style for every mock!
 jest.mock("next/link", () => ({
   __esModule: true,
   default: ({ children, ...props }: React.PropsWithChildren<React.AnchorHTMLAttributes<HTMLAnchorElement>>) => (

@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import { MusicExperience } from "./page";
+import MusicExperience from "./page";
 
 describe("MusicExperience component", () => {
   it("renders the 'Categories' label", () => {

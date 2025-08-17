@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import { NewArrival } from "./page";
+import NewArrival from "./page";
 
 describe("NewArrival component", () => {
   it("renders the 'Featured' label", () => {

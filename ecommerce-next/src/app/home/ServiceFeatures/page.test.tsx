@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import { ServiceFeatures } from "./page";
+import ServiceFeatures from "./page";
 
 describe("ServiceFeatures component", () => {
   it("renders all three feature titles", () => {

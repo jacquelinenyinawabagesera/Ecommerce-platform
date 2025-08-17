@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import { OurProducts } from "./page";
+import OurProducts from "./page";
 
 describe("OurProducts component", () => {
   it("renders the 'Our Products' label", () => {

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation"; // import router
 import { Input } from "../shared-components/Input";
 import { Button } from "../shared-components/Button";
 import { Footer } from "../shared-components/Footer";
@@ -8,6 +9,8 @@ import { Header } from "../shared-components/Header";
 import Image from "next/image";
 
 export default function SignUp() {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,6 +28,7 @@ export default function SignUp() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    router.push("/login");
   };
 
   const handleGoogleSignUp = () => {
@@ -36,11 +40,11 @@ export default function SignUp() {
       <Header />
 
       <div className="flex flex-col md:flex-row items-center md:items-start gap-40 py-12">
-        <div className="flex">
+        <div className="flex mb-20">
           <Image
             src="/images/SideImage.png"
             alt="Cart and a smartphone"
-            width={900}
+            width={1000}
             height={400}
             className="max-w-full h-auto"
           />
@@ -64,7 +68,7 @@ export default function SignUp() {
                       placeholder="Name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-red-500 placeholder:text-gray-400"
+                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-gray-500 placeholder:text-gray-400"
                     />
                   </div>
                   <div>
@@ -74,7 +78,7 @@ export default function SignUp() {
                       placeholder="Email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-red-500 placeholder:text-gray-400"
+                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-gray-500 placeholder:text-gray-400"
                     />
                   </div>
                   <div>
@@ -84,7 +88,7 @@ export default function SignUp() {
                       placeholder="Password"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-red-500 placeholder:text-gray-400"
+                      className="h-12 text-base border-0 border-b-2 border-gray-200 rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-gray-500 placeholder:text-gray-400"
                     />
                   </div>
                 </div>
@@ -125,7 +129,10 @@ export default function SignUp() {
               </form>
               <div className="text-center">
                 <span className="text-gray-600">Already have account? </span>
-                <Link href="/login" className="text-black font-medium underline hover:no-underline">
+                <Link
+                  href="/login"
+                  className="text-black font-medium underline hover:no-underline"
+                >
                   Log in
                 </Link>
               </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Hero } from "./page";
+import Hero from "./page";
 
 describe("Hero Component", () => {
   it("renders all category names", () => {
