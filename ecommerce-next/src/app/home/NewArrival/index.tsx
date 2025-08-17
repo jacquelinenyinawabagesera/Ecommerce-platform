@@ -16,7 +16,7 @@ export function NewArrival() {
         <div className="bg-black text-white rounded-sm p-8 relative overflow-hidden h-[600px] flex flex-col justify-end">
           <div className="absolute inset-0 flex items-center justify-center">
             <Image
-              src="/Images/playstation4-removebg-preview.png"
+              src="/Images/g1-removebg-preview.png"
               alt="PlayStation 5"
               width={320}
               height={320}
