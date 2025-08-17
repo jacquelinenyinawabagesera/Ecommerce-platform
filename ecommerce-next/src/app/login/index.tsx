@@ -1,13 +1,14 @@
 "use client";
+import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { Button } from "../shared-components/button";
-import { Input } from "../shared-components/input";
-import { Footer } from "../shared-components/footer";
-import { Header } from "../shared-components/signupHeader";
+import { Button } from "../shared-components/Button";
+import { Input } from "../shared-components/Input";
+import { Footer } from "../shared-components/Footer";
+import { Header } from "../shared-components/SignUpHeader";
 import Image from "next/image";
 
-export default function SignUp() {
+export default function SignIn() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

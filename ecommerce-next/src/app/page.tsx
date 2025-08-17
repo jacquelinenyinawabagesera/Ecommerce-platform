@@ -1,21 +1,19 @@
-
-
-import { BestSelling } from "./home/bestselling";
-import { Categories } from "./home/category";
-import { FlashSales } from "./home/flashsale";
-import { Hero } from "./home/hero";
-import { MusicExperience } from "./home/musicexperience";
-import { NewArrival } from "./home/newarrival";
-import { OurProducts } from "./home/ourproducts";
-import { ServiceFeatures } from "./home/servicefeatures";
-import { Footer } from "./shared-components/footer";
-import { Header } from "./shared-components/header";
+import React from 'react';
+import { BestSelling } from "./home/BestSelling";
+import { Categories } from "./home/Categories";
+import { FlashSales } from "./home/FlashSale";
+import { Hero } from "./home/Hero";
+import { MusicExperience } from "./home/MusicExperience";
+import { NewArrival } from "./home/NewArrival";
+import { OurProducts } from "./home/OurProducts";
+import { ServiceFeatures } from "./home/ServiceFeatures";
+import { Footer } from "./shared-components/Footer";
+import { Header } from "./shared-components/Header";
 
 export default function Home() {
   return (
     <div>
-
-     <Header/>
+      <Header/>
       <Hero/>
       <FlashSales/>
       <Categories/>

@@ -1,13 +1,12 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 
 export function MusicExperience() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
-
       <div className="bg-black text-white rounded-sm overflow-hidden">
         <div className="flex items-center h-96">
-
           <div className="flex-1 p-12">
             <div className="text-green-500 text-lg font-semibold mb-4">Categories</div>
             <h3 className="text-5xl font-semibold mb-6 leading-tight">

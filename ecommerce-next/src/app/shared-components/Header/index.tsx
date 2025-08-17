@@ -1,9 +1,10 @@
+import React from "react";
 import Link from "next/link";
 import { Search, Heart, ShoppingCart, User } from "lucide-react";
+
 export function Header() {
   return (
     <div className="w-full">
-
       <div className="bg-black text-white text-sm py-3 px-4">
         <div className="max-w-7xl mx-auto flex justify-center items-center">
           <span>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</span>
@@ -39,7 +40,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center space-x-4">
-
             <div className="relative hidden sm:block">
               <input
                 type="text"

@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { ArrowRight, Apple } from "lucide-react";
 import Image from "next/image";
 
@@ -26,7 +27,10 @@ export function Hero() {
                                     {category}
                                 </span>
                                 {(category === "Woman's Fashion" || category === "Men's Fashion") && (
-                                    <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-red-800 transition-colors" />
+                                    <ArrowRight
+                                        className="h-4 w-4 text-gray-400 group-hover:text-red-800 transition-colors"
+                                        data-testid="arrow-right-fashion"
+                                    />
                                 )}
                             </div>
                         ))}
@@ -71,8 +75,8 @@ export function Hero() {
                         {[...Array(5)].map((_, index) => (
                             <div
                                 key={index}
-                                className={`w-3 h-3 rounded-full ${index === 2 ? 'bg-red-800' : 'bg-white/30'
-                                    }`}
+                                className={`w-3 h-3 rounded-full ${index === 2 ? 'bg-red-800' : 'bg-white/30'}`}
+                                data-testid="hero-dot"
                             />
                         ))}
                     </div>

@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import { Heart, Eye, Star } from "lucide-react";
 
@@ -157,6 +158,7 @@ export function OurProducts() {
                       key={index}
                       className="w-5 h-5 rounded-full border-2 border-gray-300"
                       style={{ backgroundColor: color }}
+                      role="presentation"
                     />
                   ))}
                 </div>

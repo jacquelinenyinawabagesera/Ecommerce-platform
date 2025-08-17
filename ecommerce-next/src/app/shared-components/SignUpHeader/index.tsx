@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import { Search, Heart, ShoppingCart, User } from "lucide-react";
 export function Header() {
@@ -38,7 +39,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center space-x-4">
-
             <div className="relative hidden sm:block">
               <input
                 type="text"
@@ -47,7 +47,6 @@ export function Header() {
               />
               <Search className="absolute right-3 top-2.5 h-4 w-4 text-gray-600" />
             </div>
-
           </div>
         </div>
       </div>

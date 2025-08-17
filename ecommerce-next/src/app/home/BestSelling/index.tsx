@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import { Heart, Eye, Star } from "lucide-react";
 
@@ -65,7 +66,6 @@ export function BestSelling() {
                                     <Eye className="h-4 w-4" />
                                 </button>
                             </div>
-
                             <div className="w-50 h-50  rounded-lg flex items-center justify-center overflow-hidden">
                                 <Image
                                     src={product.Image}
@@ -75,12 +75,10 @@ export function BestSelling() {
                                     className="object-contain"
                                 />
                             </div>
-
                             <button className="absolute bottom-0 left-0 right-0 bg-black text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                 Add To Cart
                             </button>
                         </div>
-
                         <div className="space-y-2">
                             <h3 className="font-medium text-black">{product.name}</h3>
                             <div className="flex items-center gap-3">
@@ -94,8 +92,7 @@ export function BestSelling() {
                                     {[...Array(5)].map((_, i) => (
                                         <Star
                                             key={i}
-                                            className={`h-4 w-4 ${i < product.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
-                                                }`}
+                                            className={`h-4 w-4 ${i < product.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
                                         />
                                     ))}
                                 </div>
