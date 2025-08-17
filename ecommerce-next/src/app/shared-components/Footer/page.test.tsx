@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Footer } from "./page";
 
-Footer.displayName = "Footer";
+// Footer.displayName = "Footer";
 
 jest.mock("next/image", () => (props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLImageElement> & React.ImgHTMLAttributes<HTMLImageElement>) => {
   return <img {...props} alt={props.alt || ""} />;
