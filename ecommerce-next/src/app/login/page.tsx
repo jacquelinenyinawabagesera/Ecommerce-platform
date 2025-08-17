@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import Link from "next/link";
 import { Button } from "../shared-components/Button/page";
 import { Input } from "../shared-components/Input/page";
@@ -15,7 +15,7 @@ export default function SignIn() {
     password: "",
   });
 
-  const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -23,7 +23,7 @@ export default function SignIn() {
     }));
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };

@@ -46,8 +46,8 @@ describe("Footer", () => {
   it("renders download app section", () => {
     render(<Footer />);
     expect(screen.getByText(/Download App/i)).toBeInTheDocument();
-    expect(screen.getByText(/Google Play/i)).toBeInTheDocument();
-    expect(screen.getByText(/App Store/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/Download on Google Play Store/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/Get it on the App Store/i)).toBeInTheDocument();
   });
 
   it("renders social icons", () => {

@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import SignIn from "./page";
 
 jest.mock("next/link", () => {
-  return ({ children, ...props }: any) => <a {...props}>{children}</a>;
+  return ({ children, ...props }: React.PropsWithChildren<any>) => <a {...props}>{children}</a>;
 });
 
 jest.mock("next/image", () => (props: any) => <img {...props} alt={props.alt} />);
@@ -17,6 +17,16 @@ jest.mock("../shared-components/SignUpHeader/page", () => ({
 jest.mock("../shared-components/Footer/page", () => ({
   __esModule: true,
   Footer: () => <footer data-testid="footer" />,
+}));
+
+jest.mock("../shared-components/Button/page", () => ({
+  __esModule: true,
+  Button: (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => <button {...props} />,
+}));
+
+jest.mock("../shared-components/Input/page", () => ({
+  __esModule: true,
+  Input: (props: React.InputHTMLAttributes<HTMLInputElement>) => <input {...props} />,
 }));
 
 describe("SignIn Component", () => {
